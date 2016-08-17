@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BusCounter - Главная страница</title>
+    <link rel="stylesheet" type="text/css" href="/static/main.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+    <div class="header">
+        <img id="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhtKqE_upaIZMPQL5zh5vnnHlJRtCf2yE0f0cUZuAELjlikXp-">
+        <h3>Cлоган</h3>
+    </div>
+    <div class="menu">
+        <ul>
+                <li><a href="/"> О компании</a></li>
+                <li><a href="/products/">Продукты</a></li>
+
+                {% if username %}
+                    <li><a href="/">Мой профиль</a></li>
+                    <li><a href="/analytics/">Аналитическая система</a></li>
+                    <li id="login"><a href="/auth/logout/">Выйти ({{ username }})</a></li>
+                {% else %}
+                    <li id="login"><a href="/auth/login/"> Войти </a></li>
+                      {% block login %}{% endblock %}
+                {% endif %}
+            </ul>
+    </div>
+    <p>блок оставить заявку справа сбоку</p>
+    <div class="middle">
+        {% block about_us %}
+            <p>Здесь будет что-то о себе</p>
+        {% endblock %}
+    </div>
+
+    {% block table %} reer {% endblock %}
+    {% block a1 %} rert {% endblock %}
+
+</body>
+</html>

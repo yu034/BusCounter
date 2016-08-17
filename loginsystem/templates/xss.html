@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XSS</title>
+</head>
+<body>
+    <form action="/auth/xss/" method="post">
+        {% csrf_token %}
+            <label class="labellogin" for="username">Имя пользователя</label>
+            <input class="" type="text" name="username" id="username">
+            <label class="" for="password">Пароль</label>
+            <input class="" type="password" name="password" id="password">
+            {% if login_error %}
+                <label>{{ login_error}}</label>
+            {% endif %}
+        <label for='input'>Введите данные:</label><input  id="input" type="text" name="input" required>
+        <button type="submit">Отправить</button>
+    </form>
+    <ol>
+        {% for item in items %}
+             <li>{{ item.item|safe }}</li>
+        {% endfor %}
+    </ol>
+</body>
+</html>
