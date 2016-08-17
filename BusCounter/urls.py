@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^$', views.main, name='main'),
     url(r'^auth/', include('loginsystem.urls')),
     url(r'^analytics/', include('Analytics.urls')),
-    url(r'^products/', views.products, name='products'),
+    url(r'^products/', views.main, name='products'),
+    url(r'^about/', views.main, name='about'),
 ]

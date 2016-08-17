@@ -1,13 +1,12 @@
 from django.shortcuts import render,render_to_response
 from django.contrib import auth
+from .models import page
 
 # Create your views here.
 
-def main(request):
+def main(request, page_alias):
+
     return render_to_response('main.html', {'username': auth.get_user(request).username})
 
-def products(request):
-    return render_to_response('products.html', {'username': auth.get_user(request).username})
 
-def about_us(request):
-    return render_to_response('about.html', {'username': auth.get_user(request).username})
+

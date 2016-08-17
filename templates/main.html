@@ -17,7 +17,7 @@
     </div>
     <div class="menu">
         <ul>
-                <li><a href="/"> О компании</a></li>
+                <li><a href="/about/"> О компании</a></li>
                 <li><a href="/products/">Продукты</a></li>
 
                 {% if username %}
@@ -32,16 +32,12 @@
     </div>
     <p>блок оставить заявку справа сбоку</p>
     <div class="middle">
-        {% block about_us %}
-            <p>Здесь будет что-то о себе</p>
-        {% endblock %}
+       <!-- {% about %}-->
     </div>
-
-    {% block table %} reer {% endblock %}
-    {% block a1 %} rert {% endblock %}
 
     <div class="tag">
         {% test_tag %}
     </div>
+
 </body>
 </html>

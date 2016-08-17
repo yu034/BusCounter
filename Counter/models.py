@@ -44,3 +44,15 @@ class driver(models.Model):
 
     def __unicode__(self):
         return self.lastname + ' ' + self.firstname
+
+class page(models.Model):
+    class Meta:
+        verbose_name = "Страница"
+        verbose_name_plural = "Страницы"
+
+    title = models.CharField(max_length=30, verbose_name="Заголовок")
+    content = models.CharField(max_length=10000000, verbose_name="Контент")
+    alias = models.CharField(max_length=20, verbose_name="Имя шаблона")
+
+    def __unicode__(self):
+        return self.alias
